@@ -60,7 +60,7 @@
         "type": "amazon-ebs",
         "access_key": "{{ user `AWS_ACCESS_KEY_ID` }}",
         "secret_key": "{{ user `AWS_SECRET_ACCESS_KEY` }}",
-        "region": "us-east-1",
+        "region": "eu-west-2",
         "source_ami": "ami-10b68a78",
         "instance_type": "t1.micro",
         "ssh_username": "ubuntu",

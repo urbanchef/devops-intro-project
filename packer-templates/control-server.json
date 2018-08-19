@@ -1,7 +1,7 @@
 {
   "variables": {
       "PACKER_OS_FLAVOUR": "ubuntu",
-      "PACKER_BOX_NAME": "ubuntu-14.04.4-server-amd64",
+      "PACKER_BOX_NAME": "ubuntu-18.04-server-amd64",
       "AWS_ACCESS_KEY_ID": "{{env `AWS_ACCESS_KEY_ID`}}",
       "AWS_SECRET_ACCESS_KEY": "{{env `AWS_SECRET_ACCESS_KEY`}}",
       "DIGITALOCEAN_API_TOKEN": "{{env `DIGITALOCEAN_API_TOKEN`}}"
@@ -39,9 +39,9 @@
         "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
         "guest_os_type": "Ubuntu_64",
         "http_directory": "http",
-        "iso_checksum": "07e4bb5569814eab41fafac882ba127893e3ff0bdb7ec931c9b2d040e3e94e7a",
+        "iso_checksum": "a7f5c7b0cdd0e9560d78f1e47660e066353bb8a79eb78d1fc3f4ea62a07e6cbc",
         "iso_checksum_type": "sha256",
-        "iso_url": "http://releases.ubuntu.com/trusty/{{ user `PACKER_BOX_NAME` }}.iso",
+        "iso_url": "http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04-server-amd64.iso",
         "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
         "ssh_password": "vagrant",
         "ssh_port": 22,
@@ -59,9 +59,9 @@
         "type": "amazon-ebs",
         "access_key": "{{ user `AWS_ACCESS_KEY_ID` }}",
         "secret_key": "{{ user `AWS_SECRET_ACCESS_KEY` }}",
-        "region": "us-east-1",
-        "source_ami": "ami-10b68a78",
-        "instance_type": "t1.micro",
+        "region": "eu-west-2",
+        "source_ami": "ami-6b3fd60c",
+        "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
         "ami_name": "control-{{ user `PACKER_BOX_NAME` }}-{{timestamp}}"
       },

@@ -3,14 +3,18 @@
 apt-get -y install uwsgi-plugin-python uwsgi
 
 # reqs for Graphite
+apt-get -y install libffi-dev
 apt-get -y install python-dev
 apt-get -y install python-django python-django-tagging python-cairo
 apt-get -y install python-pip
 pip install pytz
 pip install https://github.com/graphite-project/ceres/tarball/master
-pip install whisper
-pip install carbon
-pip install graphite-web
+pip install whisper --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/lib"
+pip install carbon --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/lib"
+pip install graphite-web --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/webapp"
+#pip install whisper
+#pip install carbon
+#pip install graphite-web
 
 # make config files from examples
 cd /opt/graphite/conf/
