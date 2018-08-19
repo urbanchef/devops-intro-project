@@ -4,3 +4,4 @@ packer-templates/virtualbox/
 devops-kungfu/
 packer-templates/scripts/virtualbox/control-server/.vagrant
 packer-templates/virtualbox/.vagrant
+output/virtualbox
